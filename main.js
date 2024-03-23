@@ -9,12 +9,6 @@ myInputs.forEach((input) => {
 
     console.log(this.value);
 
-    // if (isAutoFilled) {
-    //   isFilled(this);
-
-    //   return;
-    // }
-
     isFilled(this);
   });
 });
