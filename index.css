@@ -1,0 +1,89 @@
+/* особенности работы: 
+    -   стили инпута после автозаполнения применяются не стандартные, а из состояния "focus"
+    -   можно устанавливать свою заливку для инпута при автозаполнении 
+    -   не работает transition после автозаполнения (неплавное изменение) */
+
+.input-wrapper {
+  display: inline-block;
+
+  position: relative;
+
+  padding: 10px;
+  padding-top: 30px;
+
+  border: 2px solid brown;
+}
+
+.input-placeholder {
+  position: absolute;
+
+  top: 6px;
+  left: 10px;
+
+  opacity: 0;
+
+  transition: 0.5s;
+}
+
+.input-wrapper.filled .input-placeholder {
+  opacity: 1;
+}
+
+.input {
+  padding: 10px 20px;
+
+  font-weight: 600;
+
+  background-color: aquamarine;
+  color: red;
+  border: 3px solid brown;
+  outline: none;
+
+  transition: 0.5s ease-in-out;
+}
+
+.input:hover {
+  background-color: aqua;
+  color: red;
+}
+
+.input:focus,
+.input:focus-within {
+  border: 3px solid blue;
+  border-color: red;
+  background-color: lightgreen;
+}
+
+.input:focus {
+  box-shadow: 8px 8px 8px yellow;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  transition-delay: 9999999999s;
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: inherit;
+
+  /* если оставить box-shadow inset с цветом transparent, применится цвет фона из состояния :focus,
+  если вместо transparent подставить какой-либо цвет, то будет окрашиваться в этот цвет 
+  (если в макете есть заливка для инпута в состоянии autofill) */
+
+  /* -webkit-box-shadow: 0 0 0px 200px transparent inset; */
+  -webkit-box-shadow: 0 0 0px 200px lime inset;
+  transition: all 9999999999s ease 9999999999s;
+}
+
+/* если предусмотрен внешний box-shadow, покрутить эти параметры. 
+возможно, вместо inherit нужно будет указать точные параметры внешней тени */
+input:-webkit-autofill:focus input:-webkit-autofill,
+input:-webkit-autofill:focus-within input:-webkit-autofill,
+input:-webkit-autofill:hover textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: inherit, 0 0 0px 200px transparent inset;
+}
