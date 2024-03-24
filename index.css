@@ -47,6 +47,7 @@
 .input:hover {
   background-color: aqua;
   color: red;
+  border-color: green;
 }
 
 .input:focus,
