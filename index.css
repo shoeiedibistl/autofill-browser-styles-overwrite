@@ -47,6 +47,8 @@
 .input-clear {
   width: max-content;
 
+  padding: 4px 12px;
+
   color: lightgray;
   border: 1px solid lightgray;
   pointer-events: none;
