@@ -1,3 +1,6 @@
+/* автоматически может не сбрасываться состояние focus при очистке input.value скриптом, только после ручного прокликивания. 
+теоретически может помочь дополнительная установка и снятие фокуса скриптом после такой очистки (проверить) */
+
 const myInputs = document.querySelectorAll("[data-input]");
 
 myInputs.forEach((input) => {
@@ -8,6 +11,8 @@ myInputs.forEach((input) => {
     );
 
     console.log(this.value);
+
+    if (this.hasAttribute("autocompleted")) console.log("autocompleted");
 
     isFilled(this);
   });
