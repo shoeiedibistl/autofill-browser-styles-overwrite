@@ -95,7 +95,9 @@
 
 /* !!! не протестировано !!! 
     возможно, потребуется дописать стили для фокуса, ховера, селекта и тд по аналогии с input:-webkit-autofill */
-input:auto-fill {
+input:auto-fill,
+textarea:auto-fill,
+select:auto-fill {
   transition-delay: 9999999999s;
   /*  box-shadow: inherit, 0 0 0px 200px transparent inset;
       transition: background-color 9999999999s ease 9999999999s,
