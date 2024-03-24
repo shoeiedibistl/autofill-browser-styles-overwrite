@@ -51,17 +51,15 @@
 
   color: lightgray;
   border: 1px solid lightgray;
-    
-  cursor: pointer;
   pointer-events: none;
-    
+  cursor: pointer;
+
   transition: 0.5s;
 }
 
 .input-wrapper.filled .input-clear {
   color: inherit;
   border-color: inherit;
-
   pointer-events: all;
 }
 
@@ -73,6 +71,7 @@
 
   font-weight: 600;
 
+  /* !!! background-color продублировать для input:auto-fill и input:-webkit-autofill !!! */
   background-color: aquamarine;
   color: red;
   border: 3px solid brown;
@@ -104,7 +103,12 @@
 input:auto-fill,
 textarea:auto-fill,
 select:auto-fill {
-  transition-delay: 9999999999s;
+  filter: none !important;
+  /* background-color: inherit; */
+  background: inherit;
+  background-color: aquamarine;
+
+  transition-delay: 9999999s;
   /*  box-shadow: inherit, 0 0 0px 200px transparent inset;
       transition: background-color 9999999999s ease 9999999999s,
         color 9999999999s ease 9999999999s, border-color 0.5s ease,
@@ -116,7 +120,11 @@ input:auto-fill, */
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  transition-delay: 9999999999s;
+  filter: none !important;
+  background: inherit;
+  background-color: aquamarine;
+
+  transition-delay: 9999999s;
 }
 
 /*  input:-webkit-autofill,
