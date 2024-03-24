@@ -10,7 +10,15 @@ myInputs.forEach((input) => {
       "test: " + (isAutoFilled ? "have autofill" : "dont have autofill")
     );
 
-    console.log(this.value);
+    /*  console.log(this.value);*/
+
+    if (isAutoFilled) {
+      setTimeout(() => {
+        const temp = this.value;
+        this.value = "";
+        this.value = temp;
+      }, 0);
+    }
 
     isFilled(this);
   });
