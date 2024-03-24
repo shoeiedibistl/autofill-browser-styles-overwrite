@@ -13,6 +13,8 @@ myInputs.forEach((input) => {
     /*  console.log(this.value);*/
 
     if (isAutoFilled) {
+      console.log("autofilled");
+
       setTimeout(() => {
         const temp = this.value;
         this.value = "";
