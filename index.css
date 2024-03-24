@@ -1,5 +1,5 @@
 /* особенности работы: 
-    -   !!! протестировано только на хроме !!! возможно, для других браузеров потребуется дописать стили для фокуса, ховера, селекта и тд по аналогии с input:-webkit-autofill */
+    -   !!! протестировано на хроме и фф !!! возможно, для других браузеров потребуется дописать стили для фокуса, ховера, селекта и тд по аналогии с input:-webkit-autofill */
 
 * {
   box-sizing: border-box;
@@ -103,12 +103,13 @@
 input:auto-fill,
 textarea:auto-fill,
 select:auto-fill {
-  filter: none !important;
+  /* filter: none !important; */
   /* background-color: inherit; */
   background: inherit;
   background-color: aquamarine;
 
   transition-delay: 9999999s;
+
   /*  box-shadow: inherit, 0 0 0px 200px transparent inset;
       transition: background-color 9999999999s ease 9999999999s,
         color 9999999999s ease 9999999999s, border-color 0.5s ease,
@@ -120,12 +121,22 @@ input:auto-fill, */
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  filter: none !important;
+  /* filter: none !important; */
   background: inherit;
   background-color: aquamarine;
 
   transition-delay: 9999999s;
+
+  /* вместо inherit прописать задаваемый, если есть. если нет, то оставить только inset */
+  box-shadow: inherit, 0 0 0px 200px #fff inset;
 }
+
+/* ////////////////////////////////// */
+
+/* :-moz-autofill {
+  filter: unset !important;
+  transition-delay: 0s !important;
+} */
 
 /*  input:-webkit-autofill,
     select:-webkit-autofill,
