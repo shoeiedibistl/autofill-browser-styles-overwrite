@@ -51,7 +51,10 @@
 
   color: lightgray;
   border: 1px solid lightgray;
+    
+  cursor: pointer;
   pointer-events: none;
+    
   transition: 0.5s;
 }
 
@@ -59,7 +62,6 @@
   color: inherit;
   border-color: inherit;
 
-  cursor: pointer;
   pointer-events: all;
 }
 
