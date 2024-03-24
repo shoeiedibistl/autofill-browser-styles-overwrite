@@ -34,8 +34,7 @@ myClearButtons.forEach((button) => {
     const inputToClear = inputToClearWrapper.querySelector("[data-input]");
 
     inputToClear.value = "";
-    // inputToClearWrapper.classList.remove("filled");
-    isFilled(inputToClear);
+    inputToClearWrapper.classList.remove("filled");
   });
 });
 
