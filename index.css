@@ -108,7 +108,8 @@ select:auto-fill {
   background: inherit;
   background-color: aquamarine;
 
-  transition-delay: 9999999s;
+  transition-delay: 99999s;
+  -moz-transition-delay: 0s;
 
   /*  box-shadow: inherit, 0 0 0px 200px transparent inset;
       transition: background-color 9999999999s ease 9999999999s,
@@ -125,10 +126,46 @@ select:-webkit-autofill {
   background: inherit;
   background-color: aquamarine;
 
-  transition-delay: 9999999s;
+  transition-delay: 99999s;
+  -moz-transition-delay: 0s;
 
-  /* вместо inherit прописать задаваемый, если есть. если нет, то оставить только inset */
-  box-shadow: inherit, 0 0 0px 200px #fff inset;
+  /* при необходимости вместо inherit прописать задаваемый, если есть. если нет, то оставить только inset
+  box-shadow: 0 0 0px 200px #fff inset;
+  box-shadow: inherit, 0 0 0px 200px #fff inset; */
+}
+
+@-moz-document url-prefix() {
+  input:auto-fill,
+  textarea:auto-fill,
+  select:auto-fill {
+    transition-delay: 0s;
+  }
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    transition-delay: 0s;
+  }
+}
+
+@media (min--moz-device-pixel-ratio: 0) {
+  input:auto-fill,
+  textarea:auto-fill,
+  select:auto-fill {
+    transition-delay: 0s;
+  }
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    transition-delay: 0s;
+  }
+}
+
+input:-moz-autofill,
+textarea:-moz-autofill,
+select:-moz-autofill {
+  transition-delay: 0s;
 }
 
 /* ////////////////////////////////// */
