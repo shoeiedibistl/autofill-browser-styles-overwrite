@@ -94,40 +94,42 @@
 }
 
 /* !!! не протестировано !!! 
-возможно, потребуется дописать стили для фокуса, ховера, селекта и тд по аналогии с input:-webkit-autofill */
+    возможно, потребуется дописать стили для фокуса, ховера, селекта и тд по аналогии с input:-webkit-autofill */
 input:auto-fill {
-  box-shadow: inherit, 0 0 0px 200px transparent inset;
-  transition: background-color 9999999999s ease 9999999999s,
-    color 9999999999s ease 9999999999s, border-color 0.5s ease,
-    box-shadow 0.5s ease;
   transition-delay: 9999999999s;
+  /*  box-shadow: inherit, 0 0 0px 200px transparent inset;
+      transition: background-color 9999999999s ease 9999999999s,
+        color 9999999999s ease 9999999999s, border-color 0.5s ease,
+        box-shadow 0.5s ease; */
 }
 
+/* вот так вот не приписывать, все ломается!
+input:auto-fill, */
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
   transition-delay: 9999999999s;
 }
 
-input:-webkit-autofill,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: inherit;
-  -webkit-box-shadow: 0 0 0px 200px transparent inset;
-  transition: background-color 9999999999s ease 9999999999s,
-    color 9999999999s ease 9999999999s, border-color 0.5s ease,
-    box-shadow 0.5s ease;
-}
-
-/* если предусмотрен внешний box-shadow, покрутить эти параметры. 
-возможно, вместо inherit нужно будет указать точные параметры внешней тени */
-input:-webkit-autofill:focus input:-webkit-autofill,
-input:-webkit-autofill:focus-within input:-webkit-autofill,
-input:-webkit-autofill:hover textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
-  -webkit-box-shadow: inherit, 0 0 0px 200px transparent inset;
-  transition: background-color 9999999999s ease 9999999999s,
-    color 9999999999s ease 9999999999s, border-color 0.5s ease,
-    box-shadow 0.5s ease;
-}
+/*  input:-webkit-autofill,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: inherit;
+      -webkit-box-shadow: 0 0 0px 200px transparent inset;
+      transition: background-color 9999999999s ease 9999999999s,
+        color 9999999999s ease 9999999999s, border-color 0.5s ease,
+        box-shadow 0.5s ease;
+    }
+    
+    /* если предусмотрен внешний box-shadow, покрутить эти параметры. 
+    возможно, вместо inherit нужно будет указать точные параметры внешней тени 
+    input:-webkit-autofill:focus input:-webkit-autofill,
+    input:-webkit-autofill:focus-within input:-webkit-autofill,
+    input:-webkit-autofill:hover textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
+      -webkit-box-shadow: inherit, 0 0 0px 200px transparent inset;
+      transition: background-color 9999999999s ease 9999999999s,
+        color 9999999999s ease 9999999999s, border-color 0.5s ease,
+        box-shadow 0.5s ease;
+    } */
