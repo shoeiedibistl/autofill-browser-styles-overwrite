@@ -12,8 +12,6 @@ myInputs.forEach((input) => {
 
     console.log(this.value);
 
-    if (this.hasAttribute("autocompleted")) console.log("autocompleted");
-
     isFilled(this);
   });
 });
