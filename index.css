@@ -58,6 +58,8 @@
 .input-wrapper.filled .input-clear {
   color: inherit;
   border-color: inherit;
+
+  cursor: pointer;
   pointer-events: all;
 }
 
