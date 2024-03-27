@@ -82,7 +82,7 @@
 
 .input:hover {
   background-color: lightskyblue;
-  color: red;
+  color: blue;
   border-color: green;
   box-shadow: 8px 8px 8px green;
 }
