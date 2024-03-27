@@ -24,20 +24,29 @@
   position: relative;
 
   padding: 10px;
-  padding-top: 30px;
 
   border: 2px solid brown;
+
+  transition: 0.3s;
+}
+
+.input-wrapper.filled {
+  background-color: bisque;
 }
 
 .input-placeholder {
   position: absolute;
 
-  top: 6px;
-  left: 10px;
+  top: 10px;
+  right: 10px;
+
+  color: chocolate;
+  font-weight: 600;
+  text-shadow: 0 0 6px orange;
 
   opacity: 0;
 
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .input-wrapper.filled .input-placeholder {
@@ -51,10 +60,11 @@
 
   color: lightgray;
   border: 1px solid lightgray;
+  background: #fff;
   pointer-events: none;
   cursor: pointer;
 
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .input-wrapper.filled .input-clear {
