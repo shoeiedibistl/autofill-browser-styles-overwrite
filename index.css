@@ -124,43 +124,27 @@
   box-shadow: 8px 8px 8px yellow;
 }
 
-/* !!! не протестировано !!! 
-    возможно, потребуется дописать стили для фокуса, ховера, селекта и тд по аналогии с input:-webkit-autofill */
 input:auto-fill,
 textarea:auto-fill,
 select:auto-fill {
-  /* filter: none !important; */
-  /* background-color: inherit; */
   background: inherit;
   background-color: aquamarine;
 
-  transition-delay: 99999s;
-  -moz-transition-delay: 0s;
-
-  /*  box-shadow: inherit, 0 0 0px 200px transparent inset;
-      transition: background-color 9999999999s ease 9999999999s,
-        color 9999999999s ease 9999999999s, border-color 0.5s ease,
-        box-shadow 0.5s ease; */
+  /* transition-delay: 99999s; */
+  /* -moz-transition-delay: 0s; */
 }
 
-/* вот так вот не приписывать, все ломается!
-input:auto-fill, */
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  /* filter: none !important; */
   background: inherit;
   background-color: aquamarine;
 
-  transition-delay: 99999s;
-  -moz-transition-delay: 0s;
-
-  /* при необходимости вместо inherit прописать задаваемый, если есть. если нет, то оставить только inset
-  box-shadow: 0 0 0px 200px #fff inset;
-  box-shadow: inherit, 0 0 0px 200px #fff inset; */
+  /* transition-delay: 99999s; */
+  /* -moz-transition-delay: 0s; */
 }
 
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
   input:auto-fill,
   textarea:auto-fill,
   select:auto-fill {
@@ -192,34 +176,20 @@ input:-moz-autofill,
 textarea:-moz-autofill,
 select:-moz-autofill {
   transition-delay: 0s;
-}
-
-/* ////////////////////////////////// */
-
-/* :-moz-autofill {
-  filter: unset !important;
-  transition-delay: 0s !important;
 } */
 
-/*  input:-webkit-autofill,
-    select:-webkit-autofill,
-    select:-webkit-autofill:hover,
-    select:-webkit-autofill:focus {
-      -webkit-text-fill-color: inherit;
-      -webkit-box-shadow: 0 0 0px 200px transparent inset;
-      transition: background-color 9999999999s ease 9999999999s,
-        color 9999999999s ease 9999999999s, border-color 0.5s ease,
-        box-shadow 0.5s ease;
-    }
-    
-    /* если предусмотрен внешний box-shadow, покрутить эти параметры. 
-    возможно, вместо inherit нужно будет указать точные параметры внешней тени 
-    input:-webkit-autofill:focus input:-webkit-autofill,
-    input:-webkit-autofill:focus-within input:-webkit-autofill,
-    input:-webkit-autofill:hover textarea:-webkit-autofill,
-    textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
-      -webkit-box-shadow: inherit, 0 0 0px 200px transparent inset;
-      transition: background-color 9999999999s ease 9999999999s,
-        color 9999999999s ease 9999999999s, border-color 0.5s ease,
-        box-shadow 0.5s ease;
-    } */
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  input:auto-fill,
+  textarea:auto-fill,
+  select:auto-fill {
+    transition-delay: 99999s;
+    -moz-transition-delay: 0s;
+  }
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    transition-delay: 99999s;
+    -moz-transition-delay: 0s;
+  }
+}
